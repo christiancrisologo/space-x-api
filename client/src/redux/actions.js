@@ -23,7 +23,7 @@ const getUpcomingCapsules = (dispatch) => {
 const getLandingPad = (key) => (dispatch) => {
   dispatch({ type: TYPES.API_BUSY, payload: true });
   axios
-    .get(`${END_POINT}/landing-pad/${key}`, { crossdomain: true })
+    .get(`${END_POINT}/landing-pad/${key.toUpperCase()}`, { crossdomain: true })
     .then((response) => {
       dispatch({
         type: TYPES.LANDING_PAD_SUCCESS,
