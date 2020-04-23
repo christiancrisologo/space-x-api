@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
 import { mediaQuery, colors } from "../theme";
-
+import Preloader from "../components/Preloader";
 const Container = styled.div`
   background-color: rgba(255, 255, 255, 0.98);
   display: flex;
@@ -17,8 +17,13 @@ const Container = styled.div`
     overflow: auto;
   }
 
+  ${mediaQuery.smMobile} {
+    width: 60%;
+    height: 100%;
+  }
+
   ${mediaQuery.mobile} {
-    width: 70%;
+    width: 66%;
     height: 100%;
   }
 
@@ -35,22 +40,24 @@ const Container = styled.div`
 
 export default function () {
   const dispatch = useDispatch();
-  const capsules = useSelector(({ spaceData: capsules }) => {
-    return JSON.stringify(capsules, undefined, 2);
-  });
-
+  const { consoleData, apiBusy } = useSelector((state) => state.spaceData);
+  console.log("#CC consoleData ", consoleData);
   React.useEffect(() => {
     actions.getUpcomingCapsules(dispatch);
   }, []);
 
   return (
     <Container>
-      <textarea
-        id="consoleTextArea"
-        value={capsules}
-        cols="50"
-        rows="50"
-      ></textarea>
+      {apiBusy ? (
+        <Preloader />
+      ) : (
+        <textarea
+          id="consoleTextArea"
+          value={consoleData}
+          cols="50"
+          rows="50"
+        ></textarea>
+      )}
     </Container>
   );
 }

@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const mediaSize = {
-  mobileS: "320px",
+  mobileS: "319px",
   mobileM: "481px",
   mobileL: "641px",
   tablet: "961px",
@@ -27,7 +27,8 @@ export const mediaSize = {
 };
 
 export const mediaQuery = {
-  mobile: ` @media only screen and (min-width: ${mediaSize.mobileS} ) and  (max-width: ${mediaSize.tablet} ) `,
+  smMobile: ` @media only screen and (min-width: ${mediaSize.mobileS} )  and  (max-width: ${mediaSize.mobileM} )`,
+  mobile: ` @media only screen and (min-width: ${mediaSize.mobileM} ) and  (max-width: ${mediaSize.tablet} ) `,
   desktop: ` @media only screen and (min-width: ${mediaSize.tablet} ) `,
 };
 

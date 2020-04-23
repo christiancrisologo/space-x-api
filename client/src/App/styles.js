@@ -9,10 +9,14 @@ const Application = styled.div`
   color: white;
   width: 100%;
   height: 100%;
-  margin: 10px;
+  margin: 8px;
   display: flex;
   ${mediaQuery.desktop} {
     flex-direction: column;
+  }
+
+  ${mediaQuery.smMobile} {
+    flex-direction: row;
   }
 
   ${mediaQuery.mobile} {
