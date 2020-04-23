@@ -1,6 +1,6 @@
 Prepared by : Christian R. Crisologo (Full-stack developer / Senior Front end Developer)
 
-![Working Demo Screenshot](demo-screenshot.jpg)
+![Working Demo Screenshot](demo-screenshot.png)
 
 ## Fix running docker for yosimite mac osx in local
 
