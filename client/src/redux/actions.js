@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as TYPES from "./actionTypes";
 
-const END_POINT = "http://192.168.99.102:4000";
+const END_POINT = "http://localhost:4000";
 
 const getUpcomingCapsules = (dispatch) => {
   dispatch({ type: TYPES.API_BUSY, payload: true });
