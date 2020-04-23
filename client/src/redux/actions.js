@@ -22,7 +22,6 @@ const getUpcomingCapsules = (dispatch) => {
 
 const getLandingPad = (key) => (dispatch) => {
   dispatch({ type: TYPES.API_BUSY, payload: true });
-  console.log("#CC getLandingPad ", key);
   axios
     .get(`${END_POINT}/landing-pad/${key}`, { crossdomain: true })
     .then((response) => {

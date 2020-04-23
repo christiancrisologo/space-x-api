@@ -41,7 +41,7 @@ const Container = styled.div`
 export default function () {
   const dispatch = useDispatch();
   const { consoleData, apiBusy } = useSelector((state) => state.spaceData);
-  console.log("#CC consoleData ", consoleData);
+
   React.useEffect(() => {
     actions.getUpcomingCapsules(dispatch);
   }, []);
