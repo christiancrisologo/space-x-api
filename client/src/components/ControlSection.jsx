@@ -130,7 +130,7 @@ export default function () {
     (e) => {
       actions.getLandingPad(searchInput)(dispatch);
     },
-    [searchInput]
+    [searchInput, dispatch]
   );
 
   return (
@@ -139,7 +139,7 @@ export default function () {
       <Rocket />
       <input
         name="search-landing-pad"
-        maxlength="15"
+        maxLength="15"
         type="text"
         value={searchInput}
         onChange={searchInputChange}

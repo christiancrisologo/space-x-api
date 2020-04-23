@@ -44,7 +44,7 @@ export default function () {
 
   React.useEffect(() => {
     actions.getUpcomingCapsules(dispatch);
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container>
@@ -56,6 +56,7 @@ export default function () {
           value={consoleData}
           cols="50"
           rows="50"
+          onChange={() => {}}
         ></textarea>
       )}
     </Container>
