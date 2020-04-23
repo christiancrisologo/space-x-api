@@ -15,7 +15,7 @@ export default {
         return { ...state, apiBusy: payload };
       }
       case TYPES.API_ERROR: {
-        return { ...state, apiBusy: false };
+        return { ...state, apiBusy: payload, consoleData: "No result found!" };
       }
       case TYPES.GET_CAPSULES_SUCCESS: {
         return {
