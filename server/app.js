@@ -7,6 +7,15 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+// for local dev not for production
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 function send(res, result, status = 200) {
   res.status(status);
@@ -20,7 +29,7 @@ app.get("/", async (req, res) => {
   });
 });
 
-app.get("/upcomoing-capsules", async (req, res) => {
+app.get("/upcoming-capsules", async (req, res) => {
   const response = await fetch(
     "https://api.spacexdata.com/v3/capsules/upcoming"
   );
